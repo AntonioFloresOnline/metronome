@@ -13,11 +13,24 @@
   animation: beat 100ms;
 }
 
+.beat1 {
+  animation: beat1 100ms;
+}
+
 @keyframes beat {
   from {
     background-color: #ff6347;
   }
   to {
     background-color: #783024;
+  }
+}
+
+@keyframes beat1 {
+  from {
+    background-color: #ff6347;
+  }
+  to {
+    background-color: #5bff47;
   }
 }
