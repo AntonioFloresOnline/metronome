@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metronomo</title>
+  </head>
+  <body>
+    <h2>Compass: 4/4</h2>
+    <h2>Beats por minuto: 60</h2>
+    <button id="start-button">Start Metronome</button>
+    <button id="stop-button">Stop Metronome</button>
+    <script>
+      // Variables to function
+      const startButton = document.getElementById("start-button");
+      const stopButton = document.getElementById("stop-button");
+      const beepSound = new Audio("assets/sounds/beep.wav");
+
+      // Metronome Object
+      const metronome = {
+        bpm: 60,
+        compass: "4/4",
+        metronomeRunning: "",
+        start() {
+          this.metronomeRunning = setInterval(() => {
+            beepSound.play();
+          }, 1000);
+          console.log("Metronomo iniciado");
+        },
+        stop() {
+          clearInterval(this.metronomeRunning);
+          console.log("Metronomo detenido");
+        },
+      };
+
+      // User Interaction
+      function startMetronome() {
+        metronome.start();
+      }
+
+      function stopMetronome() {
+        metronome.stop();
+      }
+
+      startButton.addEventListener("click", startMetronome);
+      stopButton.addEventListener("click", stopMetronome);
+    </script>
+  </body>
+</html>
