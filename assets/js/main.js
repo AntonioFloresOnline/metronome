@@ -5,6 +5,7 @@ const beepSound = new Audio("assets/sounds/beep.wav");
 const bpmInput = document.getElementById("bpm");
 const displayBpm = document.getElementById("display-bpm");
 const runningMessage = document.getElementById("running-message");
+const visualBeat = document.getElementById("visual-beat");
 
 // Metronome Object
 const metronome = {
@@ -19,6 +20,10 @@ const metronome = {
       if (this.running == false) {
         this.running = setInterval(() => {
           beepSound.play();
+          visualBeat.classList.add("beat");
+          setTimeout(() => {
+            visualBeat.classList.remove("beat");
+          }, 200);
         }, this.interval);
         console.log(`Metronome started at: ${this.bpm}`);
         displayBpm.textContent = this.bpm;

@@ -1,3 +1,23 @@
 .buttons-container {
   margin-top: 20px;
 }
+
+.visual-beat {
+  background: #ff6347;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.beat {
+  animation: beat 100ms;
+}
+
+@keyframes beat {
+  from {
+    background-color: #ff6347;
+  }
+  to {
+    background-color: #783024;
+  }
+}
